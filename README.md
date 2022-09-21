@@ -11,6 +11,6 @@
 
 [Basic Electronics](https://www.youtube.com/playlist?list=PLUfABYNel-fjBJFyIaKOpvVkJtV0ZsOQn)
 
-[Probability & Statistics](https://www.youtube.com/playlist?list=PLUfABYNel-fgh8A2-3mSwEcOTfh10HjoB) or [NPTEL](https://www.youtube.com/results?search_query=probability+and+statistics+iit+kgp)
+[Probability & Statistics](https://www.youtube.com/playlist?list=PLUfABYNel-fgh8A2-3mSwEcOTfh10HjoB) or [NPTEL](https://www.youtube.com/playlist?list=PL6C92B335BD4238AB)
 
 [Signals & Systems](https://youtube.com/playlist?list=PLUfABYNel-fi2iFl9AdoNRfaoL7KJLFnP)
