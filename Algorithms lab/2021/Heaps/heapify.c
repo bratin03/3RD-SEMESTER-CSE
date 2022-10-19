@@ -1,7 +1,7 @@
-# define CAPACITY 10
+#include<stdio.h>
+#include<stdlib.h>
 
 int size=0;
-int H[CAPACITY+1];
 
 int Root(){
     return 1;
@@ -22,12 +22,12 @@ int RightChild(int n)
     return 2*n+1;
 }
 
-bool HasParent(int n)
+int HasParent(int n)
 {
     return n!=Root();
 }
 
-bool IsNode(int n)
+int IsNode(int n)
 {
     return n<=size;
 }
@@ -61,11 +61,11 @@ void shiftUp(int H[],int n)
 
 void push(int H[],int newNum)
 {
-    if(size==CAPACITY)
-    {
-        printf("Priority queue full.\n");
-        exit(0);
-    }
+    // if(size==CAPACITY)
+    // {
+    //     printf("Priority queue full.\n");
+    //     exit(0);
+    // }
     H[size+1]=newNum;
     size++;
     shiftUp(H,size);
@@ -111,3 +111,24 @@ void buildheap(int arr[],int H[],int n)
         shiftDown(H,i);
     }
 }
+
+int main()
+{int n;
+printf("Enter the number of elements in the array:\n");
+scanf("%d",&n);
+int a[n],b[n+1];
+int i;
+printf("Enter the elements:");
+for(i=0;i<n;i++)
+{
+    scanf("%d",&a[i]);
+}
+buildheap(a,b,n);
+int k;
+printf("Enter K:\n");
+scanf("%d",&k);
+for(i=0;i<k;i++)
+{
+printf("%d",getMin(b));
+Pop(b);
+}}
