@@ -8,7 +8,7 @@ int min;
 }Node;
 
 int size=0;
-int capacity=100;
+int capacity=1000;
 
 int Root(){
     return 1;
@@ -44,16 +44,7 @@ int min(int a,int b)
     return a;
 }
 
-int getMin(int H[])
-{
-if (size==0)
-{
-    printf("Empty priority queue.\n");
-    exit(0);
-}
 
-return H[Root()];
-}
 
 void swap(Node *xp, Node *yp)
 {
@@ -110,33 +101,6 @@ void shiftDown(Node H[],int n)
     }
 }
 
-// void shiftDown2(Node H[],int n)
-// {
-
-//     while(IsNode(LeftChild(n)))
-//     {
-//         int child=LeftChild(n);
-//         if(IsNode(RightChild(n))&&(H[RightChild(n)].priority>H[LeftChild(n)].priority))
-//         child=RightChild(n);
-//         if(H[n].priority<H[child].priority)
-//         swap(&H[n],&H[child]);
-//         else break;
-//         n=child;
-//     }
-// }
-
-// void Pop(int H[])
-// {
-//     if(size==0)
-//     {
-//         printf("Empty priority queue.\n");
-//         exit(0);
-//     }
-
-//     H[Root()]=H[size];
-//     size--;
-//     shiftDown(H,Root());
-// }
 
 void initMin(Node H[])
 {   int i;
@@ -170,7 +134,7 @@ int deleteMax(Node H[])
 int deleteMin(Node H[])
 {
     int i=1;
-    while(i<size/2)
+    while(i<=size/2)
     {
         if(H[i].min==H[LeftChild(i)].min)
         i=LeftChild(i);
@@ -198,6 +162,20 @@ void initHeap(int Q[],int n,Node H[])
         shiftDown(H,i);
     }
 }
+void show(Node H[])
+{   int i;
+    for(i=1;i<=size;i++)
+    {
+        printf("%d, %d  ",H[i].priority,H[i].min);
+        printf("(");
+        if(IsNode(LeftChild(i))){ printf("%d, %d ",H[LeftChild(i)].priority,H[LeftChild(i)].min);}
+        else printf(" _ ");
+        printf(":");
+        if(IsNode(RightChild(i))){ printf("%d, %d ",H[RightChild(i)].priority,H[RightChild(i)].min);}
+        else printf(" _ ");
+        printf(")\n");
+    }
+}
 
 
 
@@ -215,16 +193,8 @@ int main()
     }
     Node H[capacity+1];
     initHeap(ninits,ninit,H);
-    for(i=1;i<=size;i++)
-    {
-        printf("%d ",H[i].priority);
-    }
     initMin(H);
-    printf("\n");
-    for(i=1;i<=size;i++)
-    {
-        printf("%d ",H[i].min);
-    }
+    show(H);
     int nin;
     printf("Enter number of nins:\n");
     scanf("%d",&nin);
@@ -239,48 +209,27 @@ int main()
     {
         insert(H,nins[i]);
     }
-    for(i=1;i<=size;i++)
-    {
-        printf("%d ",H[i].priority);
-    }
-    printf("\n");
-    for(i=1;i<=size;i++)
-    {
-        printf("%d ",H[i].min);
-    }
+    show(H);
     int ndelmax;
     printf("Number of elements to delete:\n");
     scanf("%d",&ndelmax);
+    printf("Max deletion:\n");
     for(i=0;i<ndelmax;i++)
     {
         printf("%d ",deleteMax(H));
     }
-        for(i=1;i<=size;i++)
-    {
-        printf("%d ",H[i].priority);
-    }
     printf("\n");
-    for(i=1;i<=size;i++)
-    {
-        printf("%d ",H[i].min);
-    }
-    
+    show(H);
     int ndelmin;
     printf("Number of elements to delete:\n");
     scanf("%d",&ndelmin);
+    printf("Min deletion\n");
     for(i=0;i<ndelmin;i++)
     {
         printf("%d ",deleteMin(H));
     }
-        for(i=1;i<=size;i++)
-    {
-        printf("%d ",H[i].priority);
-    }
     printf("\n");
-    for(i=1;i<=size;i++)
-    {
-        printf("%d ",H[i].min);
-    }
+    show(H);
     
 
 }
