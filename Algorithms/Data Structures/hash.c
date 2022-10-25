@@ -287,3 +287,70 @@ void display(int htable[TABLE_SIZE])
 }
 
 //it can be modified to quadratic probing and double hashing
+
+//modify
+
+void insert(int htable[TABLE_SIZE], int ele)
+{
+	int i, index,flag=0;
+	for(i=0; i<TABLE_SIZE; i++)
+	{
+		index = (i+ele)%TABLE_SIZE;
+		if(htable[index] == -1||htable[index] == -2)
+		{
+			htable[index] = ele;
+			flag = 1;
+			break;
+		}
+	}
+	if(flag == 0)
+		printf("Element cannot be inserted\n");
+	else
+		printf("Element Successfully Inserted\n");
+}
+
+void delete(int htable[TABLE_SIZE], int ele)
+{
+	int i, index,flag=0;
+		index=ele%TABLE_SIZE;
+	while(htable[index]!=-1&&i<TABLE_SIZE)
+	{
+	   if(hashtable[index]==ele)
+	   {
+	      htable[index] = -2;
+	      flag=1;
+	      break;
+	   }
+	      index++;
+	      i++;
+	      index%=TABLE_SIZE;
+	}
+
+	if(flag == 1)
+		printf("Element successfully deleted\n");
+	else
+		printf("Element cannot be deleted\n");
+}
+
+void search(int htable[TABLE_SIZE], int key)
+{
+	int i=0, index,flag=0,pos;
+	index=key%TABLE_SIZE;
+	while(htable[index]!=-1&&i<TABLE_SIZE)
+	{
+	   if(hashtable[index]==key)
+	   {
+	      pos=index;
+	      flag=1;
+	      break;
+	   }
+	      index++;
+	      i++;
+	      index%=TABLE_SIZE;
+	}
+	if(flag == 1)
+		printf("Element Found at Position: %d\n", pos);
+	else
+		printf("Element Not Found\n");
+}
+
