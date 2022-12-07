@@ -1,7 +1,7 @@
 /**
  *    Author: Udaya Bhaskar Cheepurupalli
- *    For any queries regarding Question 1, mail at: udayabhaskar2001@iitkgp.ac.in       
-**/
+ *    For any queries regarding Question 1, mail at: udayabhaskar2001@iitkgp.ac.in
+ **/
 
 #include <stdio.h>
 

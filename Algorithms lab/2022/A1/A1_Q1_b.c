@@ -1,7 +1,7 @@
 /**
  *    Author: Udaya Bhaskar Cheepurupalli
- *    For any queries regarding Question 1, mail at: udayabhaskar2001@iitkgp.ac.in       
-**/
+ *    For any queries regarding Question 1, mail at: udayabhaskar2001@iitkgp.ac.in
+ **/
 
 #include <stdio.h>
 
@@ -55,9 +55,9 @@ int main()
         maxHops = max(maxHops, head - tail);
 
         /*
-           move the tail ahead by one step, 
-           continue with the same head 
-           as we have already considered (head - tail) and lesser length hops 
+           move the tail ahead by one step,
+           continue with the same head
+           as we have already considered (head - tail) and lesser length hops
            and we are looking for a better answer
         */
         if (tail < head)
@@ -73,7 +73,7 @@ int main()
     /*
       Time Complexity: O(n)
       because the outer while loop runs for n times
-      and the inner while loop runs for n times over all the outer loop iterations, 
+      and the inner while loop runs for n times over all the outer loop iterations,
       as head increases monotonically and initialized only once
       Note that in the inner while loop head moves in one direction and stops when reached n
     */
