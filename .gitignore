@@ -1,3 +1,5 @@
 *.o
 *.out
 *.json
+# VS Code
+.vscode/
